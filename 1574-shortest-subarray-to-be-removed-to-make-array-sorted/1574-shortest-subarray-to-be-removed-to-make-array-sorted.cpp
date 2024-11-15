@@ -13,13 +13,17 @@ public:
         int l = 0;
         int ans = r; // determine prefix size
         
-        while(l < r and (l == 0 || arr[l-1] <= arr[l]))
+        while(l < r)
         {   
             while(r < n and arr[l] > arr[r])
             {
                 r++;
             }
+            
             ans = min(ans, r - l - 1);
+            
+            if(arr[l] > arr[l+1]) break;
+            
             l++;
         }
         
