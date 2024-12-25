@@ -27,11 +27,11 @@ public:
             vector<int> level;
             for(int i = 0; i < size; i++)
             {
-                TreeNode* node = q.front();
+                TreeNode* curr = q.front();
                 q.pop();
-                if(node->left != NULL) q.push(node->left);
-                if(node->right != NULL) q.push(node->right);
-                level.push_back(node->val);
+                if(curr->left != NULL) q.push(curr->left);
+                if(curr->right != NULL) q.push(curr->right);
+                level.push_back(curr->val);
             }
             ans.push_back(level);
         }
